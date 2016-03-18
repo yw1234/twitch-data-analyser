@@ -63,6 +63,8 @@ var drawChart = {
         v_chart.draw(v_data, {
             displayAnnotations: true,colors: ['red']
         });
+
+        loading.hide();
     }
 }
 
@@ -79,6 +81,14 @@ function parseDate(date){
         hh = time[0],
         mm = time[1];
 
-    //console.log(Number(y), monthMap[m], Number(d), Number(hh), Number(mm))
     return new Date(y, monthMap[m], d, hh, mm);
 }
+
+var loading = {
+    show: function(){
+        $("#loading").show();
+    },
+    hide: function(){
+        $("#loading").hide();
+    }
+};
